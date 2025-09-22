@@ -1,0 +1,63 @@
+{
+  "Config": {
+    "SystemStatus": true,
+    "DefaultRedirectURL": "https://theadora.vn/",
+    "SessionTimeout": "2h",
+    "IdleTimeout": "15m",
+    "EnableSurvey": false,
+    "EnableLogging": true,
+    "LogRetentionDays": 30,
+    "RotateCampaigns": true
+
+  },
+  "Brands": [
+    {
+      "BrandName": "Xanh SM",
+      "Config": {
+        "Status": false
+      },
+      "Campaigns": [
+        {
+          "CampaignName": "test-1",
+          "StartDay": "2025-09-01",
+          "DueTo": "2025-09-30",
+          "ButtonImage": "/xanh-sm/button-xanh.png",
+          "ButtonEndpoint": "https://google.com/",
+          "Banner": "/xanh-sm/xanh-sm banner-doc.jpg",
+          "AdsGridBackground": "/xanh-sm/xanh-sm banner-doc",
+          "ProductBanner1": "/xanh-sm/xanh-sm-banner-1.jpg",
+          "ProductBanner2": "/xanh-sm/xanh-sm-banner-2.jpg",
+          "ProductBanner3": "/xanh-sm/xanh-sm-banner-3.jpg",
+          "Config": {
+            "Status": true
+            
+          }
+        }
+      ]
+    },
+     {
+      "BrandName": "Root",
+      "Config": {
+        "Status": false,
+        "RotateCampaigns": true
+      },
+      "Campaigns": [
+        {
+          "CampaignName": "Root Campaign",
+          "StartDay": "2025-09-01",
+          "DueTo": "2025-09-30",
+          "ButtonImage": "/xanh-sm/button-xanh.png",
+          "ButtonEndpoint": "https://theadora.vn",
+          "Banner": "/the-adora/background-banner.jpg",
+          "AdsGridBackground": "/the-adora/promo-background.jpg",
+          "ProductBanner1": "/the-adora/promo-1.jpg",
+          "ProductBanner2": "/the-adora/promo-2.jpg",
+          "ProductBanner3": "/the-adora/promo-3.jpg",
+          "Config": {
+            "Status": true
+          }
+        }
+      ]
+    }
+  ]
+}
