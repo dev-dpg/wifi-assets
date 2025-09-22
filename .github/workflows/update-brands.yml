@@ -1,0 +1,34 @@
+name: Update brands.json from Issues
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  update-brands:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Update brands.json')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Parse JSON from issue body
+        id: parse
+        run: |
+          echo '${{ github.event.issue.body }}' > new-brands.json
+          cat new-brands.json
+          # Validate JSON
+          cat new-brands.json | jq .
+      
+      - name: Replace brands.json
+        run: |
+          mv new-brands.json brands/brands.json
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add brands/brands.json
+          git commit -m "Update brands.json from issue #${{ github.event.issue.number }}"
+          git push
